@@ -1,0 +1,25 @@
+directory: ~/audio
+plugins: fetchart embedart web discogs
+original_date: yes
+import:
+    copy: yes
+    write: yes
+    log: ~/logs/beetslog.log
+art_filename: cover
+ui:
+    color: yes
+fetchart:
+    auto: yes
+    cautions: yes
+    cover_names: cover
+    sources: itunes *
+embedart:
+    auto: yes
+web:
+    host: 0.0.0.0
+    port: 8337
+paths:
+    default: $albumartist/$year $album/$track $title
+    singleton: Singletons/$artist - $title
+    comp: Various/$album/$track $title
+    albumtype:soundtrack: $albumartist/$album/$track $title

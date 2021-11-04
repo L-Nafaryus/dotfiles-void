@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+export NNN_PLUG='p:mocplay'
+
+alias nnn='nnn -E'

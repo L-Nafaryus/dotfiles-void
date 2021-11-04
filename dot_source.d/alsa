@@ -1,0 +1,1 @@
+# amixer -c 1 cset name='IEC958 Playback Switch' on

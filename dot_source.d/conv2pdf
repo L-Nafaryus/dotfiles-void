@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Usage: conv2pdf <input>
+conv2pdf() {
+    if [ -f "$1" ]; then
+        local DIR=$( cd "$( dirname "$1" )" && pwd )
+        local FILE=$( basename "$1" )
+        
+        echo "Input file: ${DIR}/${FILE}"
+
+        case ${FILE} in
+            *.doc|*.docx)
+                local NAME=$( basename -s .docx "$( basename -s .doc "$1" )" )
+                local CMD=unoconv
+
+                ${CMD} \
+                    -o "${DIR}/${NAME}.pdf" \
+                    -f pdf \
+                    "$1"
+                    # -v
+            ;;
+            *.djvu)
+                local NAME=$( basename -s .djvu "$1" )
+                local CMD=ddjvu
+
+                ${CMD} \
+                    -format=pdf \
+                    -mode=color \
+                    "$1" \
+                    "${DIR}/${NAME}.pdf"
+                    # -verbose
+            ;;
+            *.md)
+                local NAME=$( basename $1 .md )
+                local CMD=pandoc
+
+                ${CMD} \
+                    "$1" \
+                    -o "${DIR}/${NAME}.pdf" \
+                    --from markdown \
+                    -V lang=ru \
+                    -V geometry:a4paper \
+                    -V geometry:margin=2cm \
+                    -V mainfont="Fira Code" \
+                    -V fontsize=10pt \
+                    --pdf-engine=xelatex
+            ;;
+            *)
+                echo "Error: '$1' cannot be converted via converter()"
+            ;;
+        esac
+
+        echo "Output file: ${DIR}/${NAME}.pdf"
+        echo "Command: ${CMD}"
+    else
+        echo "Error: '$1' is not valid file"
+    fi
+}

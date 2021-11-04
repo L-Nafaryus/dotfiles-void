@@ -1,0 +1,26 @@
+[user]
+    name = L-Nafaryus
+    email = l.nafaryus@gmail.com
+    signingKey = C76D8DCD2727DBB7
+[gpg]
+    program = gpg2
+[diff]
+    submodule = log
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[commit]
+    gpgsign = true
+[tag]
+    gpgsign = true
+[core]
+    quotePath = false
+    commitGraph = true
+[receive]
+    advertisePushOptions = true
+[gc]
+    writeCommitGraph = true
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+

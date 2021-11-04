@@ -1,0 +1,137 @@
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+separator=false
+separator_block_width=5
+border_top=0
+border_left=0
+border_right=0
+border_bottom=0
+
+[player-button]
+full_text= ♬ 
+command=exec alacritty -e mocp
+color=#fabd2f
+
+[player-prev]
+full_text= < 
+command=./moc.sh prev
+color=#fabd2f
+
+[player-play]
+full_text= % 
+command=./moc.sh play
+color=#fabd2f
+
+[player-next]
+full_text= > 
+command=./moc.sh next
+color=#fabd2f
+
+[player-status]
+command=./moc.sh status
+interval=1
+signal=1
+color=#fabd2f
+
+[drive-button]
+full_text=  
+command=dunstify -u low -t 60000 -a "drive" "Drives" "$(./drive.sh full)"
+color=#fabd2f
+
+[drive]
+command=./drive.sh bar
+interval=2
+color=#fabd2f
+
+[weather-button]
+full_text=  
+command=dunstify -u low -t 60000 -a "weather" "Weather" "$(./weather.sh full)"
+color=#fabd2f
+
+[weather]
+#label= ☔ 
+command=./weather.sh bar
+interval=3600
+color=#fabd2f
+
+[layout]
+label= ⌨ 
+command=./kblayout.sh
+interval=1
+color=#fabd2f
+
+[volume-button]
+full_text=  
+command=exec pavucontrol 
+color=#fabd2f
+
+[volume]
+#label=  
+command=./volume.sh 
+interval=1
+signal=1
+markup=pango
+color=#fabd2f
+
+[brightness]
+label=  
+command=./brightness.sh
+interval=5
+signal=2
+#border=#fabd2f
+color=#fabd2f
+
+[battery-button]
+full_text= 
+command=dunstify -u low -t 60000 -a "battey" "Battery" "$(./battery.sh full)"
+color=#fabd2f
+
+[battery]
+#label=  
+command=./battery.sh bar
+interval=3
+#border=#fabd2f
+color=#fabd2f
+
+[wireless-button]
+full_text=  
+command=nmcli device wifi rescan; exec alacritty -e nmtui
+color=#fabd2f
+
+[wireless]
+#label=  
+command=./wireless.sh
+interval=2
+#border=#fabd2f
+color=#fabd2f
+
+[time-button]
+full_text=  
+command=dunstify -u low -t 60000 -a "time" "Calendar" "$(./time.sh full)"
+color=#fabd2f
+
+[time]
+#label=  
+command=./time.sh bar
+interval=1
+markup=pango
+#border=#fabd2f
+separator_block_width=0
+color=#fabd2f
+

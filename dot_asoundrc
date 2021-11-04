@@ -1,0 +1,14 @@
+# pcm.HDMI { type hw; card HDMI; }
+# ctl.HDMI { type hw; card HDMI; }
+
+# pcm.PCH { type hw; card PCH; }
+# ctl.PCH { type hw; card PCH; }
+
+#pcm.!default pcm.PCH
+#ctl.!default ctl.PCH
+
+pcm.pulse { type pulse }
+ctl.pulse { type pulse }
+
+pcm.!default { type pulse }
+ctl.!default { type pulse }
