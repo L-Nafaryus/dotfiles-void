@@ -334,4 +334,7 @@ for_window [class=.*] border pixel 1
 # Autostart
 ## Transparency
 exec --no-startup-id dbus-launch picom
+
 exec --no-startup-id dunst &
+exec --no-startup-id conky -p 3 -c ~/.config/conky/conky.conf &
+exec --no-startup-id conky -p 5 -c ~/.config/conky/conky-2.conf &

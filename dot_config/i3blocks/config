@@ -28,48 +28,6 @@ full_text= ♬
 command=exec alacritty -e mocp
 color=#fabd2f
 
-[player-prev]
-full_text= < 
-command=./moc.sh prev
-color=#fabd2f
-
-[player-play]
-full_text= % 
-command=./moc.sh play
-color=#fabd2f
-
-[player-next]
-full_text= > 
-command=./moc.sh next
-color=#fabd2f
-
-[player-status]
-command=./moc.sh status
-interval=1
-signal=1
-color=#fabd2f
-
-[drive-button]
-full_text=  
-command=dunstify -u low -t 60000 -a "drive" "Drives" "$(./drive.sh full)"
-color=#fabd2f
-
-[drive]
-command=./drive.sh bar
-interval=2
-color=#fabd2f
-
-[weather-button]
-full_text=  
-command=dunstify -u low -t 60000 -a "weather" "Weather" "$(./weather.sh full)"
-color=#fabd2f
-
-[weather]
-#label= ☔ 
-command=./weather.sh bar
-interval=3600
-color=#fabd2f
-
 [layout]
 label= ⌨ 
 command=./kblayout.sh
@@ -97,13 +55,8 @@ signal=2
 #border=#fabd2f
 color=#fabd2f
 
-[battery-button]
-full_text= 
-command=dunstify -u low -t 60000 -a "battey" "Battery" "$(./battery.sh full)"
-color=#fabd2f
-
 [battery]
-#label=  
+label=  
 command=./battery.sh bar
 interval=3
 #border=#fabd2f

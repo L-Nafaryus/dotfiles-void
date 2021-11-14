@@ -29,3 +29,8 @@ include /usr/share/doc/task/rc/dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
+report.conky.description=Conky report
+report.conky.columns=project,description.truncated,due
+report.conky.labels=Project,Desc,Due
+report.conky.sort=due+,project+,priority+
+report.conky.filter=status:pending limit:page
